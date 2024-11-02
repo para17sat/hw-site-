@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonsai Pricing Page</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f8fb;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+}
+
+h1 {
+    color: #00a870;
+    font-size: 24px;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+    font-size: 28px;
+}
+
+
+.pricing {
+    padding: 40px 20px;
+    background-color: #edf7f7;
+    text-align: center;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle-container span {
+    font-size: 14px;
+    color: #333;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    transition: 0.4s;
+    border-radius: 15px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #00a870;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card.featured {
+    border: 2px solid #b5b5b5;
+}
+
+.price {
+    font-size: 24px;
+    color: #00a870;
+    margin: 10px 0;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    margin-top: 15px;
+    text-align: left;
+}
+
+ul li {
+    padding: 5px 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00a870;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #007a5e;
+}
+.faq {
+    padding: 40px 20px;
+}
+
+.faq h2 {
+    margin-bottom: 20px;
+}
+
+.faq ul {
+    list-style: none;
+    text-align: center;
+}
+
+.faq li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+footer {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.column {
+    text-align: center;
+}
+
+.column h3 {
+    margin-bottom: 10px;
+    color: #000000;
+    font-size: 16px;
+}
+
+.column ul {
+    list-style: none;
+}
+
+.column li {
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+
+@media (min-width: 768px) {
+    .pricing-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bonsai</h1>
+</header>
+
+<section class="pricing">
+    <h2>Plans & Pricing</h2>
+    <div class="toggle-container">
+        <span>Monthly</span>
+        <label class="toggle">
+            <input type="checkbox" id="billing-toggle">
+            <span class="slider"></span>
+        </label>
+        <span>Yearly</span>
+    </div>
+    <div class="pricing-cards">
+        <div class="card">
+            <h3>Starter</h3>
+            <p class="price">$24 <span>/ month</span></p>
+            <ul>
+                <li>All Templates</li>
+                <li>Unlimited Clients & Projects</li>
+                <li>Invoicing & Payments</li>
+                <li>Proposals & Contracts</li>
+                <li>Tasks & Time Tracking</li>
+                <li>Client CRM</li>
+                <li>Expense Tracking</li>
+                <li>Up to 5 Project Collaborators</li>
+            </ul>
+            <button>Start Free</button>
+        </div>
+           <div class="card">
+            <h3>Collaborators</h3>
+            <p class="price">Free</p>
+            <p>Invite other users to specific projects for limited access and functionality.</p>
+        </div>
+        
+        <div class="card">
+            <h3>Partners</h3>
+            <p class="price">$9 <span>/ month</span></p>
+            <p>Invite other users for full account access and company management.</p>
+        </div>
+        
+        <div class="card">
+            <h3>Bonsai Tax</h3>
+            <p class="price">$10 <span>/ month</span></p>
+            <p>Track expenses, identify write-offs, and estimate quarterly taxes easily.</p>
+        </div>
+    </div>
+
+     <div class="card featured">
+            <h3>Professional</h3>
+            <p class="price">$39 <span>/ month</span></p>
+            <ul>
+                <li>Everything in Starter plus...</li>
+                <li>Custom Branding</li>
+                <li>Forms & Questionnaires</li>
+                <li>Workflow Automations</li>
+                <li>Client Portal</li>
+                <li>QuickBooks Integration</li>
+                <li>Calendly Integration</li>
+                <li>Zapier Integration</li>
+                <li>Up to 15 Project Collaborators</li>
+            </ul>
+            <button>Start Free</button>
+        </div>
+        
+        <div class="card">
+            <h3>Business</h3>
+            <p class="price">$79 <span>/ month</span></p>
+            <ul>
+                <li>Everything in Professional plus...</li>
+                <li>Subcontractor Management</li>
+                <li>Hiring Agreement Templates (1099 contracts)</li>
+                <li>Subcontractor Onboarding</li>
+                <li>Talent Pool</li>
+                <li>3 Team Seats (additional seats $9/month)</li>
+                <li>Accountant Access</li>
+                <li>Unlimited Project Collaborators</li>
+            </ul>
+            <button>Start Free</button>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <ul>
+        <li>How does the free trial work?</li>
+        <li>Can I change plans anytime?</li>
+        <li>How do I pause my Bonsai subscription?</li>
+        <li>What is your refund policy?</li>
+    </ul>
+</section>
+
+<footer>
+    <div class="footer-links">
+        <div class="column">
+            <h3>Product</h3>
+            <ul>
+                <li>Proposals</li>
+                <li>Contracts</li>
+                <li>Time Tracking</li>
+                <li>Invoices</li>
+                <li>Forms</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Free Resources</h3>
+            <ul>
+                <li>Freelance Resources</li>
+                <li>Templates</li>
+                <li>Self-Employment Tax Calculator</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Bonsai</h3>
+            <ul>
+                <li>About</li>
+                <li>Careers</li>
+                <li>Support</li>
+                <li>Privacy</li>
+                <li>Terms</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
